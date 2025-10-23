@@ -1,48 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FourSquare } from "react-loading-indicators";
 
-const slides = [
-  {
-    id: 1,
-    image: "https://i.ibb.co/pBChQyMy/frthfcs.jpg",
-    title: "Red Dead Redemption",
-  },
-  {
-    id: 2,
-    image: "https://i.ibb.co/nqS6mxDL/grn-trsmo.jpg",
-    title: "Gran Turismo",
-  },
-  {
-    id: 3,
-    image: "https://i.ibb.co/p658CHNf/rdr.jpg",
-    title: "The Last of Us",
-  },
-];
+const Banner = () => {
+  const [slidesdata, setSlidesdata] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const Slider = () => {
-  const [current, setCurrent] = useState(0);
+  // Fetch JSON data
+  useEffect(() => {
+    fetch("/gamedata.json")
+      .then((res) => res.json())
+      .then((data) => setSlidesdata(data))
+      .catch((err) => console.error("Error loading banner data:", err));
+  }, []);
 
-  const nextSlide = () => {
-    setCurrent(current === slides.length - 1 ? 0 : current + 1);
-  };
+  // Auto slide every 5 seconds
+  useEffect(() => {
+    if (slidesdata.length === 0) return;
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? slides.length - 1 : current - 1);
-  };
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slidesdata.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [slidesdata]);
+
+  if (slidesdata.length === 0) {
+    return <FourSquare color={["#32cd32", "#327fcd", "#cd32cd", "#cd8032"]} />;
+  }
 
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
-      {slides.map((slide, index) => (
+    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden mt-10 rounded-2xl">
+      {slidesdata.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out ${
-            index === current ? "translate-x-0" : "translate-x-full"
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
           <img
-            src={slide.image}
+            src={slide.coverPhoto}
             alt={slide.title}
             className="w-full h-full object-cover"
           />
+
+          {/* Game Title */}
           <div className="absolute bottom-5 left-5 bg-black/40 backdrop-blur-sm p-3 rounded-md">
             <h2 className="text-2xl md:text-4xl font-extrabold tracking-wide text-yellow-400 drop-shadow-lg">
               {slide.title}
@@ -51,21 +52,29 @@ const Slider = () => {
         </div>
       ))}
 
-      {/* Navigation */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-5 -translate-y-1/2 btn btn-circle"
-      >
-        ❮
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-5 -translate-y-1/2 btn btn-circle"
-      >
-        ❯
-      </button>
+      {/* Navigation Arrows */}
+      <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
+        <button
+          onClick={() =>
+            setCurrentSlide(
+              (currentSlide - 1 + slidesdata.length) % slidesdata.length
+            )
+          }
+          className="btn btn-circle"
+        >
+          ❮
+        </button>
+        <button
+          onClick={() =>
+            setCurrentSlide((currentSlide + 1) % slidesdata.length)
+          }
+          className="btn btn-circle"
+        >
+          ❯
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Slider;
+export default Banner;
