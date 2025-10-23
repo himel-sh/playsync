@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import { NavLink } from "react-router";
 
 const popularGamePromise = fetch("/gamedata.json").then((res) => res.json());
 
@@ -16,7 +17,8 @@ const PopularGames = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {topGames.map((game) => (
-          <div
+          <NavLink
+            to={`/games/${game.id}`}
             key={game.id}
             className="bg-base-100 shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
           >
@@ -40,7 +42,7 @@ const PopularGames = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </NavLink>
         ))}
       </div>
     </div>

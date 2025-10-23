@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-black text-white p-10">
+    <footer className="footer sm:footer-horizontal bg-black text-white p-10 mt-10">
       {/* Brand Section */}
       <aside>
         <p className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
