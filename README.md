@@ -33,7 +33,7 @@ The purpose of **PlaySync** is to provide gamers with a unified, cloud-connected
 
 **Tooling**
 
-- ESLint & Prettier – Linting and code formatting.
+- Prettier – Linting and code formatting.
 - dotenv – Environment variable management.
 
 ---
