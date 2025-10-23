@@ -1,17 +1,67 @@
-# React + Vite
+# 🎮 PlaySync
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**PlaySync** is a modern web application built with **React**, **Vite**, **Firebase**, and **React Router** — designed as a personal **game hub and library** where users can discover, organize, and manage their favorite games seamlessly across devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## React Compiler
+🔗 [View Live Website](https://your-live-url-here.com)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Project Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# b12-a9-firesheild-himel-sh
+The purpose of **PlaySync** is to provide gamers with a unified, cloud-connected platform to:
+
+- Explore and manage a personal collection of games.
+- Log in securely using Firebase Authentication.
+- Sync data in real-time across sessions and devices.
+- Experience a clean, responsive, and fast user interface built with Vite + React.
+
+---
+
+## 🚀 Tech Stack
+
+**Frontend**
+
+- [React](https://reactjs.org/) – Declarative UI components.
+- [Vite](https://vitejs.dev/) – Lightning-fast bundler and dev server.
+- [React Router](https://reactrouter.com/) – Dynamic client-side routing.
+- [Firebase](https://firebase.google.com/) – Authentication, Firestore, and hosting.
+- [Tailwind CSS](https://tailwindcss.com/) – Modern utility-first styling.
+
+**Tooling**
+
+- ESLint & Prettier – Linting and code formatting.
+- dotenv – Environment variable management.
+
+---
+
+## ✨ Key Features
+
+✅ **User Authentication**
+
+- Firebase Authentication for signup, login, and persistent sessions.
+
+✅ **Game Library**
+
+- Add, view, and organize your personal game collection.
+- Real-time sync via Firestore database.
+
+✅ **Responsive Design**
+
+- Mobile-first layout with Tailwind CSS.
+- Consistent header, footer, and main content across all pages.
+
+✅ **Dynamic Routing**
+
+- Single-page navigation powered by React Router.
+- Dedicated 404 page for invalid routes.
+
+✅ **Reusable Architecture**
+
+- Modular components, hooks, and context for scalability.
+- Centralized Firebase and route management.
+
+---
