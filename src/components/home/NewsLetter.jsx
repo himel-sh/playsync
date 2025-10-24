@@ -5,7 +5,6 @@ const NewsLetter = () => {
     <div className="mt-8">
       <h2 className="text-2xl font-bold mb-4">Our NewsLetter</h2>
 
-      {/* Newsletter Card */}
       <div className="bg-gray-800 text-white p-6 rounded-lg shadow-md flex flex-col items-center max-w-xl mx-auto">
         <span className="text-xl md:text-4xl font-bold text-primary tracking-tight hidden sm:inline-block">
           Play<span className="text-secondary">Sync</span>

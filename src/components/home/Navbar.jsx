@@ -1,11 +1,12 @@
 import React, { use } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import logo from "../../assets/Adobe Express - file.png";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logout } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     const confirm = await Swal.fire({
@@ -20,7 +21,10 @@ const Navbar = () => {
 
     if (confirm.isConfirmed) {
       try {
+        navigate("/", { replace: true });
+
         await logout();
+
         Swal.fire({
           title: "Goodbye!",
           text: "You're logged out successfully!",
@@ -38,7 +42,6 @@ const Navbar = () => {
       }
     }
   };
-
   const navLinks = (
     <>
       <li>
@@ -77,7 +80,6 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
       <div className="w-11/12 mx-auto flex justify-between items-center">
-        {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img
@@ -91,9 +93,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Navigation & Auth */}
         <div className="flex items-center gap-3">
-          {/* Mobile Menu */}
           <div className="dropdown dropdown-end lg:hidden">
             <button
               tabIndex={0}
@@ -123,15 +123,12 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Desktop Menu */}
           <ul className="menu menu-horizontal gap-3 hidden lg:flex">
             {navLinks}
           </ul>
 
-          {/* Auth Section */}
           {user ? (
             <div className="flex items-center gap-3">
-              {/* Avatar */}
               <div className="flex items-center gap-2">
                 {user.photoURL ? (
                   <img
@@ -152,7 +149,6 @@ const Navbar = () => {
                 </span>
               </div>
 
-              {/* Logout */}
               <button
                 onClick={handleLogout}
                 className="btn btn-outline btn-error btn-sm"

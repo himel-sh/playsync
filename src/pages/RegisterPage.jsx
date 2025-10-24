@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import bgImg from "../../src/assets/5153829.jpg";
@@ -10,8 +10,8 @@ const RegisterPage = () => {
       "This email is already registered. Try logging in.",
     "auth/weak-password": "Password should be at least 6 characters.",
   };
-  const { createUser, setUser } = use(AuthContext);
-
+  const { createUser, setUser, updateUser } = use(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,7 +20,6 @@ const RegisterPage = () => {
     const email = form.email.value.trim();
     const password = form.password.value;
 
-    // ✅ Client-side password validation
     const uppercasePattern = /[A-Z]/;
     const lowercasePattern = /[a-z]/;
 
@@ -51,11 +50,28 @@ const RegisterPage = () => {
       });
     }
 
-    // ✅ Only proceed if password passes validation
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        setUser(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({
+              ...user,
+              displayName: name,
+              photoURL: photo,
+            });
+            navigate("/");
+          })
+          .catch((error) => {
+            console.error("Failed to update profile:", error);
+            Swal.fire({
+              title: "Profile Update Failed",
+              text: "Your account was created but we couldn't update your profile details. You can update them later in settings.",
+              icon: "warning",
+              confirmButtonColor: "#f59e0b",
+            });
+          });
+
         form.reset();
 
         Swal.fire({

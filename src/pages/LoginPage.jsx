@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -7,6 +7,8 @@ import bgImg from "../../src/assets/5153829.jpg"; // ✅ keep your background
 
 const LoginPage = () => {
   const { signin, user } = use(AuthContext); // ✅ also get user
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handlelogin = (e) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ const LoginPage = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(location.state || "/");
 
         Swal.fire({
           title: "Welcome back!",

@@ -3,7 +3,6 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer sm:footer-horizontal bg-black text-white p-10">
-      {/* Brand Section */}
       <aside>
         <p className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
           PlaySync
@@ -11,7 +10,6 @@ const Footer = () => {
         <p className="text-gray-400 mt-1">Your hub for all things gaming.</p>
       </aside>
 
-      {/* Games Section */}
       <nav>
         <h6 className="footer-title text-gray-400 uppercase tracking-wider">
           Games
@@ -30,7 +28,6 @@ const Footer = () => {
         </a>
       </nav>
 
-      {/* Company Section */}
       <nav>
         <h6 className="footer-title text-gray-400 uppercase tracking-wider">
           Company
@@ -49,7 +46,6 @@ const Footer = () => {
         </a>
       </nav>
 
-      {/* Legal Section */}
       <nav>
         <h6 className="footer-title text-gray-400 uppercase tracking-wider">
           Legal

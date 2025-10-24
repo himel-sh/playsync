@@ -5,7 +5,6 @@ const Banner = () => {
   const [slidesdata, setSlidesdata] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Fetch JSON data
   useEffect(() => {
     fetch("/gamedata.json")
       .then((res) => res.json())
@@ -13,7 +12,6 @@ const Banner = () => {
       .catch((err) => console.error("Error loading banner data:", err));
   }, []);
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     if (slidesdata.length === 0) return;
 
@@ -43,7 +41,6 @@ const Banner = () => {
             className="w-full h-full object-cover"
           />
 
-          {/* Game Title */}
           <div className="absolute bottom-5 left-5 bg-black/40 backdrop-blur-sm p-3 rounded-md">
             <h2 className="text-2xl md:text-4xl font-extrabold tracking-wide text-yellow-400 drop-shadow-lg">
               {slide.title}
@@ -52,7 +49,6 @@ const Banner = () => {
         </div>
       ))}
 
-      {/* Navigation Arrows */}
       <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
         <button
           onClick={() =>
