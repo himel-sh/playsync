@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 const Home = () => {
   return (
-    <div>
+    <div className="pb-10">
       <Suspense
         fallback={
           <FourSquare color={["#32cd32", "#327fcd", "#cd32cd", "#cd8032"]} />
