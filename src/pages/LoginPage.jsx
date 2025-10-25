@@ -3,12 +3,32 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
-import bgImg from "../../src/assets/5153829.jpg"; // ✅ keep your background
+import bgImg from "../../src/assets/5153829.jpg";
 
 const LoginPage = () => {
-  const { signin, user } = use(AuthContext); // ✅ also get user
+  const { signin, user, googleSignIn } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        navigate(location.state || "/");
+        Swal.fire({
+          title: "Welcome!",
+          text: `Logged in as ${user.displayName || user.email}`,
+          icon: "success",
+          confirmButtonColor: "#16a34a",
+          timer: 2500,
+          showConfirmButton: false,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const handlelogin = (e) => {
     e.preventDefault();
@@ -85,18 +105,18 @@ const LoginPage = () => {
               <a className="link link-hover">Forgot password?</a>
             </div>
 
-            {/* Login Button */}
             <button type="submit" className="btn btn-neutral mt-4">
               Login
             </button>
 
-            {/* Google Button (unchanged) */}
-            <button className="btn btn-outline btn-accent">
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-outline btn-accent"
+            >
               <FcGoogle size={20} />
               Login with Google
             </button>
 
-            {/* Register Link */}
             <p className="mt-4 text-center">
               Don’t have an account?{" "}
               <Link className="text-primary font-semibold" to="/auth/register">

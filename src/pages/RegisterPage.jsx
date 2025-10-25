@@ -1,5 +1,6 @@
 import React, { use } from "react";
-import { Link, Navigate, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import bgImg from "../../src/assets/5153829.jpg";
@@ -10,8 +11,35 @@ const RegisterPage = () => {
       "This email is already registered. Try logging in.",
     "auth/weak-password": "Password should be at least 6 characters.",
   };
-  const { createUser, setUser, updateUser } = use(AuthContext);
+
+  const { createUser, setUser, updateUser, googleSignIn } = use(AuthContext);
   const navigate = useNavigate();
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        navigate("/");
+        Swal.fire({
+          title: "Welcome!",
+          text: `Registered & logged in as ${user.displayName || user.email}`,
+          icon: "success",
+          confirmButtonColor: "#16a34a",
+          timer: 2500,
+          showConfirmButton: false,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Google Sign-In Failed",
+          text: "Unable to complete Google sign-in. Please try again.",
+          icon: "error",
+          confirmButtonColor: "#ef4444",
+        });
+      });
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -143,6 +171,15 @@ const RegisterPage = () => {
 
             <button type="submit" className="btn btn-neutral mt-4">
               Register
+            </button>
+
+            <button
+              onClick={handleGoogleSignIn}
+              type="button"
+              className="btn btn-outline btn-accent mt-2"
+            >
+              <FcGoogle size={20} />
+              Login with Google
             </button>
 
             <p className="mt-4 text-center">

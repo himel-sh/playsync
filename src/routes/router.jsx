@@ -8,6 +8,7 @@ import RegisterPage from "../pages/RegisterPage";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
 
   {
     path: "/*",
-    element: <h2>404</h2>,
+    element: <Error></Error>,
   },
 ]);
 
