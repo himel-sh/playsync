@@ -74,6 +74,7 @@ const LoginPage = () => {
       className="flex justify-center items-center h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
+      <title>PlaySync | Login</title>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-5">
         <h1 className="font-bold text-center text-3xl mt-4">
           {user ? "Switch to another Account" : "Login Your Account"}

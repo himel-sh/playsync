@@ -7,6 +7,7 @@ const Error = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-white px-4 text-center">
+      <title>PlaySync | Page Not Found</title>
       <img src={err} alt="404 Error" className="w-72 sm:w-96 mb-6" />
       <h1 className="text-3xl sm:text-5xl font-bold mb-2">Page Not Found</h1>
       <p className="text-gray-400 text-lg sm:text-xl mb-6">

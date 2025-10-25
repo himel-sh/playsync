@@ -6,6 +6,7 @@ const Games = () => {
   const games = use(gamePromise);
   return (
     <div className="my-12">
+      <title>PlaySync | Games</title>
       <h2 className="text-2xl font-bold mb-4">Total Games ({games.length})</h2>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
         {games.map((game) => (

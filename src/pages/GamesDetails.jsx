@@ -16,6 +16,7 @@ const GamesDetails = () => {
 
   return (
     <div className="w-full min-h-screen py-10">
+      <title>PlaySync | {game.title}</title>
       <div className="w-full h-screen relative rounded-2xl overflow-hidden">
         <img
           src={game.coverPhoto}
