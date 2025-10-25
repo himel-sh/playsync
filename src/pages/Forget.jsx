@@ -64,6 +64,7 @@ const Forget = () => {
         background: "radial-gradient(circle at center, #f0a0f0, #ffffff 80%)",
       }}
     >
+      <title>PlaySync | Forget</title>
       <div className="card w-full max-w-sm shadow-2xl p-6 bg-white rounded-2xl border-4 border-pink-300 animate-fade-in">
         <h1 className="text-3xl font-extrabold text-center mb-6 text-pink-600">
           Reset Password

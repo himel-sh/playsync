@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FourSquare } from "react-loading-indicators";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Banner = () => {
   const [slidesdata, setSlidesdata] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Load slides data
   useEffect(() => {
     fetch("/gamedata.json")
       .then((res) => res.json())
@@ -12,6 +14,7 @@ const Banner = () => {
       .catch((err) => console.error("Error loading banner data:", err));
   }, []);
 
+  // Auto-slide every 10 seconds
   useEffect(() => {
     if (slidesdata.length === 0) return;
 
@@ -28,27 +31,34 @@ const Banner = () => {
 
   return (
     <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden mt-10 rounded-2xl">
-      {slidesdata.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <img
-            src={slide.coverPhoto}
-            alt={slide.title}
-            className="w-full h-full object-cover"
-          />
+      <AnimatePresence>
+        {slidesdata.map((slide, index) =>
+          index === currentSlide ? (
+            <motion.div
+              key={slide.id}
+              className="absolute top-0 left-0 w-full h-full"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 1 }}
+            >
+              <img
+                src={slide.coverPhoto}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
 
-          <div className="absolute bottom-5 left-5 bg-black/40 backdrop-blur-sm p-3 rounded-md">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-wide text-yellow-400 drop-shadow-lg">
-              {slide.title}
-            </h2>
-          </div>
-        </div>
-      ))}
+              <div className="absolute bottom-5 left-5 bg-black/40 backdrop-blur-sm p-3 rounded-md">
+                <h2 className="text-2xl md:text-4xl font-extrabold tracking-wide text-yellow-400 drop-shadow-lg">
+                  {slide.title}
+                </h2>
+              </div>
+            </motion.div>
+          ) : null
+        )}
+      </AnimatePresence>
 
+      {/* Navigation Buttons */}
       <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
         <button
           onClick={() =>

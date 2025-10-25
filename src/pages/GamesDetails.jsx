@@ -11,12 +11,17 @@ const GamesDetails = () => {
     setGame(gameDetails || null);
   }, [data, id]);
 
+  useEffect(() => {
+    if (game) {
+      document.title = `${game.title}`;
+    }
+  }, [game]);
+
   if (!game)
     return <div className="p-8 text-center">Loading game details...</div>;
 
   return (
     <div className="w-full min-h-screen py-10">
-      <title>PlaySync | {game.title}</title>
       <div className="w-full h-screen relative rounded-2xl overflow-hidden">
         <img
           src={game.coverPhoto}
