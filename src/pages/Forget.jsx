@@ -42,7 +42,6 @@ const Forget = () => {
 
       setEmail("");
 
-      // Open Gmail after a short delay
       setTimeout(() => {
         window.open("https://mail.google.com/mail/u/0/#inbox", "_blank");
       }, 3000);

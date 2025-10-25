@@ -11,7 +11,6 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState(""); // track email input
 
-  // Google login
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
@@ -31,7 +30,6 @@ const LoginPage = () => {
       });
   };
 
-  // Email/password login
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -50,7 +48,7 @@ const LoginPage = () => {
           showConfirmButton: false,
         });
         form.reset();
-        setEmail(""); // reset state
+        setEmail("");
       })
       .catch((error) => {
         console.log(error);
@@ -67,7 +65,6 @@ const LoginPage = () => {
       });
   };
 
-  // Forgot password
   const handleForgotPassword = () => {
     if (!email) {
       Swal.fire({

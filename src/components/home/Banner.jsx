@@ -14,7 +14,6 @@ const Banner = () => {
       .catch((err) => console.error("Error loading banner data:", err));
   }, []);
 
-  // Auto-slide every 10 seconds
   useEffect(() => {
     if (slidesdata.length === 0) return;
 
@@ -58,7 +57,6 @@ const Banner = () => {
         )}
       </AnimatePresence>
 
-      {/* Navigation Buttons */}
       <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
         <button
           onClick={() =>

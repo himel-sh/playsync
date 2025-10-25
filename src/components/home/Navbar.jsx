@@ -54,16 +54,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : "hover:text-primary"
-          }
-        >
-          About
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           to="/games"
@@ -74,9 +65,21 @@ const Navbar = () => {
           Games
         </NavLink>
       </li>
+
+      {user && (
+        <li>
+          <NavLink
+            to="/my-profile"
+            className={({ isActive }) =>
+              isActive ? "text-primary font-semibold" : "hover:text-primary"
+            }
+          >
+            Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
-
   return (
     <nav className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
       <div className="w-11/12 mx-auto flex justify-between items-center">

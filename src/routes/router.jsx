@@ -10,6 +10,8 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
 import Error from "../pages/Error";
 import Forget from "../pages/Forget";
+import Profile from "../pages/Profile";
+import UpdateProfile from "../pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +23,8 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/about",
-        element: <h2>About</h2>,
+        path: "/my-profile",
+        element: <Profile></Profile>,
       },
       {
         path: "/games",
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/forgetpass",
         element: <Forget></Forget>,
+      },
+      {
+        path: "/update-profile",
+        element: <UpdateProfile />,
       },
     ],
   },
