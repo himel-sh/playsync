@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
@@ -6,15 +6,16 @@ import Swal from "sweetalert2";
 import bgImg from "../../src/assets/5153829.jpg";
 
 const LoginPage = () => {
-  const { signin, user, googleSignIn } = use(AuthContext);
+  const { signin, user, googleSignIn } = useContext(AuthContext); // ✅ fixed
   const location = useLocation();
   const navigate = useNavigate();
+  const [email, setEmail] = useState(""); // track email input
 
+  // Google login
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        // console.log(user);
         navigate(location.state || "/");
         Swal.fire({
           title: "Welcome!",
@@ -30,18 +31,16 @@ const LoginPage = () => {
       });
   };
 
-  const handlelogin = (e) => {
+  // Email/password login
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
-    const email = form.email.value;
     const password = form.password.value;
 
     signin(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
         navigate(location.state || "/");
-
         Swal.fire({
           title: "Welcome back!",
           text: `Logged in as ${user.displayName || user.email}`,
@@ -50,12 +49,11 @@ const LoginPage = () => {
           timer: 2500,
           showConfirmButton: false,
         });
-
         form.reset();
+        setEmail(""); // reset state
       })
       .catch((error) => {
         console.log(error);
-
         Swal.fire({
           title: "Login Failed",
           text:
@@ -69,6 +67,20 @@ const LoginPage = () => {
       });
   };
 
+  // Forgot password
+  const handleForgotPassword = () => {
+    if (!email) {
+      Swal.fire({
+        title: "Enter your email",
+        text: "Please type your email before clicking forgot password.",
+        icon: "warning",
+        confirmButtonColor: "#f59e0b",
+      });
+      return;
+    }
+    navigate("/forgetpass", { state: { email } }); // pass email to forget page
+  };
+
   return (
     <div
       className="flex justify-center items-center h-screen bg-cover bg-center"
@@ -80,7 +92,7 @@ const LoginPage = () => {
           {user ? "Switch to another Account" : "Login Your Account"}
         </h1>
 
-        <form onSubmit={handlelogin} className="card-body">
+        <form onSubmit={handleLogin} className="card-body">
           <fieldset className="fieldset">
             {/* Email */}
             <label className="label">Email</label>
@@ -89,6 +101,8 @@ const LoginPage = () => {
               name="email"
               className="input"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
 
@@ -103,7 +117,9 @@ const LoginPage = () => {
             />
 
             <div>
-              <a className="link link-hover">Forgot password?</a>
+              <a onClick={handleForgotPassword} className="link link-hover">
+                Forgot password?
+              </a>
             </div>
 
             <button type="submit" className="btn btn-neutral mt-4">
@@ -112,7 +128,7 @@ const LoginPage = () => {
 
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-outline btn-accent"
+              className="btn btn-outline btn-accent mt-2"
             >
               <FcGoogle size={20} />
               Login with Google

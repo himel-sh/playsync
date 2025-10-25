@@ -9,6 +9,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
 import Error from "../pages/Error";
+import Forget from "../pages/Forget";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         ),
         loader: () => fetch("/gamedata.json"),
         hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "/forgetpass",
+        element: <Forget></Forget>,
       },
     ],
   },
