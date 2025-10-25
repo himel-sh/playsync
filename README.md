@@ -6,7 +6,7 @@
 
 ## 🌐 Live Demo
 
-🔗 [View Live Website](https://your-live-url-here.com)
+🔗 [View Live Website](https://playsync-gamehub.web.app/)
 
 ---
 
@@ -30,6 +30,12 @@ The purpose of **PlaySync** is to provide gamers with a unified, cloud-connected
 - [React Router](https://reactrouter.com/) – Dynamic client-side routing.
 - [Firebase](https://firebase.google.com/) – Authentication, Firestore, and hosting.
 - [Tailwind CSS](https://tailwindcss.com/) – Modern utility-first styling.
+- [@tailwindcss/vite](https://github.com/tailwindlabs/tailwindcss-vite) – Tailwind CSS integration for Vite.
+- [DaisyUI](https://daisyui.com/) – Prebuilt UI components for Tailwind CSS.
+- [Framer Motion](https://www.framer.com/motion/) – Advanced animations for React.
+- [React Icons](https://react-icons.github.io/react-icons/) – Scalable vector icons for React.
+- [React Loading Indicators](https://www.npmjs.com/package/react-loading-indicators) – Loading and spinner components.
+- [SweetAlert2](https://sweetalert2.github.io/) – Beautiful alert and modal interface.
 
 **Tooling**
 
