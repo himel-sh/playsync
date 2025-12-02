@@ -71,3 +71,4 @@ The purpose of **PlaySync** is to provide gamers with a unified, cloud-connected
 - Centralized Firebase and route management.
 
 ---
+# playsync
