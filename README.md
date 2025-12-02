@@ -73,4 +73,3 @@ The purpose of **PlaySync** is to provide gamers with a unified, cloud-connected
 --
 
 # playsync
-# playsync
