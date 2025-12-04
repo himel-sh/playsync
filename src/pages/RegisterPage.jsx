@@ -30,7 +30,6 @@ const RegisterPage = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
         Swal.fire({
           title: "Google Sign-In Failed",
           text: "Unable to complete Google sign-in. Please try again.",
@@ -91,10 +90,9 @@ const RegisterPage = () => {
             navigate("/");
           })
           .catch((error) => {
-            console.error("Failed to update profile:", error);
             Swal.fire({
               title: "Profile Update Failed",
-              text: "Your account was created but we couldn't update your profile details. You can update them later in settings.",
+              text: "Your account was created but we couldn't update your profile details.",
               icon: "warning",
               confirmButtonColor: "#f59e0b",
             });
@@ -170,22 +168,33 @@ const RegisterPage = () => {
               required
             />
 
-            <button type="submit" className="btn btn-neutral mt-4">
+            {/* Gradient Register Button */}
+            <button
+              type="submit"
+              className="mt-4 w-full py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:opacity-90 transition duration-300"
+            >
               Register
             </button>
 
+            {/* Gradient Google Sign-In Button */}
             <button
               onClick={handleGoogleSignIn}
               type="button"
-              className="btn btn-outline btn-accent mt-2"
+              className="mt-2 w-full py-2 rounded-lg flex items-center justify-center gap-2 font-semibold
+             bg-white border-2 border-yellow-400
+             hover:bg-gradient-to-r hover:from-yellow-400 hover:via-red-500 hover:to-pink-500
+             hover:text-white transition duration-300"
             >
               <FcGoogle size={20} />
-              Login with Google
+              Register with Google
             </button>
 
             <p className="mt-4 text-center">
               Already have an account?{" "}
-              <Link className="text-primary font-semibold" to="/auth/login">
+              <Link
+                className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+                to="/auth/login"
+              >
                 Login
               </Link>
             </p>

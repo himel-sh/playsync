@@ -1,6 +1,5 @@
 import React, { use } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
-import logo from "../../assets/Adobe Express - file.png";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -22,7 +21,6 @@ const Navbar = () => {
     if (confirm.isConfirmed) {
       try {
         navigate("/", { replace: true });
-
         await logout();
 
         Swal.fire({
@@ -33,7 +31,6 @@ const Navbar = () => {
           showConfirmButton: false,
         });
       } catch (error) {
-        console.error("Logout failed:", error);
         Swal.fire({
           title: "Oops!",
           text: "Logout failed. Please try again.",
@@ -42,13 +39,16 @@ const Navbar = () => {
       }
     }
   };
+
   const navLinks = (
     <>
       <li>
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : "hover:text-primary"
+            isActive
+              ? "font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+              : "hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:via-red-500 hover:to-pink-500"
           }
         >
           Home
@@ -59,7 +59,9 @@ const Navbar = () => {
         <NavLink
           to="/games"
           className={({ isActive }) =>
-            isActive ? "text-primary font-semibold" : "hover:text-primary"
+            isActive
+              ? "font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+              : "hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:via-red-500 hover:to-pink-500"
           }
         >
           Games
@@ -71,7 +73,9 @@ const Navbar = () => {
           <NavLink
             to="/my-profile"
             className={({ isActive }) =>
-              isActive ? "text-primary font-semibold" : "hover:text-primary"
+              isActive
+                ? "font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+                : "hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:via-red-500 hover:to-pink-500"
             }
           >
             Profile
@@ -80,29 +84,22 @@ const Navbar = () => {
       )}
     </>
   );
+
   return (
     <nav className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
-      <div className="w-11/12 mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center">
-            <img
-              src={logo}
-              alt="PlaySync Logo"
-              className="w-14 h-14 md:w-16 md:h-16 object-contain"
-            />
-            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight hidden sm:inline-block">
-              Play<span className="text-secondary">Sync</span>
-            </span>
-          </Link>
-        </div>
+      <div className="max-w-7xl mx-auto w-11/12 flex justify-between items-center">
+        {/* Brand Text */}
+        <Link
+          to="/"
+          className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+        >
+          PlaySync
+        </Link>
 
         <div className="flex items-center gap-3">
+          {/* Mobile dropdown */}
           <div className="dropdown dropdown-end lg:hidden">
-            <button
-              tabIndex={0}
-              className="btn btn-ghost"
-              aria-label="Open menu"
-            >
+            <button tabIndex={0} className="btn btn-ghost" aria-label="menu">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -118,6 +115,8 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+
+            {/* Mobile menu styled too */}
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow-md right-0"
@@ -126,47 +125,58 @@ const Navbar = () => {
             </ul>
           </div>
 
+          {/* Desktop nav */}
           <ul className="menu menu-horizontal gap-3 hidden lg:flex">
             {navLinks}
           </ul>
 
+          {/* Auth section */}
           {user ? (
             <div className="flex items-center gap-3">
+              {/* Avatar */}
               <div className="flex items-center gap-2">
                 {user.photoURL ? (
                   <img
                     src={user.photoURL}
                     alt={user.displayName || "User"}
-                    className="w-10 h-10 rounded-full border border-primary"
+                    className="w-10 h-10 rounded-full border border-yellow-400"
                     referrerPolicy="no-referrer"
                   />
                 ) : (
-                  <div className="w-10 h-10 rounded-full bg-gray-400 flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center text-white font-bold">
                     {user.displayName
                       ? user.displayName.charAt(0).toUpperCase()
                       : "U"}
                   </div>
                 )}
+
                 <span className="font-medium hidden sm:inline-block">
                   {user.displayName || "User"}
                 </span>
               </div>
 
+              {/* Logout — gradient border */}
               <button
                 onClick={handleLogout}
-                className="btn btn-outline btn-error btn-sm"
+                className="px-4 py-1 rounded-md font-semibold  bg-transparent border-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white hover:opacity-90 transition"
               >
                 Logout
               </button>
             </div>
           ) : (
             <div className="flex gap-2">
-              <Link to="/auth/login" className="btn btn-outline btn-sm">
+              {/* Login */}
+              <Link
+                to="/auth/login"
+                className="px-4 py-1 rounded-md border font-semibold border-gray-400 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:via-red-500 hover:to-pink-500 transition"
+              >
                 Login
               </Link>
+
+              {/* Register — gradient button */}
               <Link
                 to="/auth/register"
-                className="btn btn-primary btn-sm text-white"
+                className="px-4 py-1 rounded-md font-semibold text-white bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:opacity-90 transition"
               >
                 Register
               </Link>

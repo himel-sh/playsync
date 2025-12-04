@@ -6,10 +6,10 @@ import Swal from "sweetalert2";
 import bgImg from "../../src/assets/5153829.jpg";
 
 const LoginPage = () => {
-  const { signin, user, googleSignIn } = useContext(AuthContext); // ✅ fixed
+  const { signin, user, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const [email, setEmail] = useState(""); // track email input
+  const [email, setEmail] = useState("");
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -25,8 +25,13 @@ const LoginPage = () => {
           showConfirmButton: false,
         });
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        Swal.fire({
+          title: "Google Sign-In Failed",
+          text: "Unable to complete Google sign-in. Please try again.",
+          icon: "error",
+          confirmButtonColor: "#ef4444",
+        });
       });
   };
 
@@ -50,15 +55,10 @@ const LoginPage = () => {
         form.reset();
         setEmail("");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         Swal.fire({
           title: "Login Failed",
-          text:
-            error.message.includes("auth/invalid-credential") ||
-            error.message.includes("wrong-password")
-              ? "Invalid email or password. Please try again."
-              : "Something went wrong. Please try again later.",
+          text: "Invalid email or password. Please try again.",
           icon: "error",
           confirmButtonColor: "#ef4444",
         });
@@ -75,7 +75,7 @@ const LoginPage = () => {
       });
       return;
     }
-    navigate("/forgetpass", { state: { email } }); // pass email to forget page
+    navigate("/forgetpass", { state: { email } });
   };
 
   return (
@@ -91,7 +91,6 @@ const LoginPage = () => {
 
         <form onSubmit={handleLogin} className="card-body">
           <fieldset className="fieldset">
-            {/* Email */}
             <label className="label">Email</label>
             <input
               type="email"
@@ -103,7 +102,6 @@ const LoginPage = () => {
               required
             />
 
-            {/* Password */}
             <label className="label">Password</label>
             <input
               type="password"
@@ -119,13 +117,22 @@ const LoginPage = () => {
               </a>
             </div>
 
-            <button type="submit" className="btn btn-neutral mt-4">
+            {/* Gradient Login Button */}
+            <button
+              type="submit"
+              className="mt-4 w-full py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:opacity-90 transition duration-300"
+            >
               Login
             </button>
 
+            {/* Gradient Google Sign-In Button */}
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-outline btn-accent mt-2"
+              type="button"
+              className="mt-2 w-full py-2 rounded-lg flex items-center justify-center gap-2 font-semibold
+                         bg-white border-2 border-yellow-400
+                         hover:bg-gradient-to-r hover:from-yellow-400 hover:via-red-500 hover:to-pink-500
+                         hover:text-white transition duration-300"
             >
               <FcGoogle size={20} />
               Login with Google
@@ -133,7 +140,10 @@ const LoginPage = () => {
 
             <p className="mt-4 text-center">
               Don’t have an account?{" "}
-              <Link className="text-primary font-semibold" to="/auth/register">
+              <Link
+                className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+                to="/auth/register"
+              >
                 Register
               </Link>
             </p>

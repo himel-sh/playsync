@@ -6,14 +6,14 @@ import Footer from "./Footer";
 const HomeLayout = () => {
   return (
     <div>
-      <header>
-        <Header></Header>
+      <header className="sticky top-0 z-50 bg-white shadow-md">
+        <Header />
       </header>
-      <main className="min-h-screen w-11/12 mx-auto">
-        <Outlet></Outlet>
+      <main className="min-h-screen max-w-7xl w-11/12 mx-auto mt-4">
+        <Outlet />
       </main>
       <footer>
-        <Footer></Footer>
+        <Footer />
       </footer>
     </div>
   );

@@ -5,9 +5,15 @@
     "coverPhoto": "https://i.ibb.co.com/spL5kxKQ/1.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.pubg.com/",
-    "description": "PUBG is a battle royale game where players fight to be the last one standing.",
+    "description": "PUBG is a pioneering battle royale game that drops up to one hundred players onto a large, remote island. Starting with nothing, players must scavenge for weapons, vehicles, and equipment while fighting to eliminate all opponents. The map's safe zone continually shrinks, forcing players into increasingly tight engagements until only one player or one squad remains victorious. The game emphasizes realistic weapon handling, tactical positioning, and strategic planning in its gritty, military-simulation style.",
     "ratings": "4.5",
-    "developer": "PUBG Corporation"
+    "developer": "PUBG Corporation",
+    "releaseDate": "2017-12-20",
+    "platforms": ["PC", "PS4", "Xbox One", "Mobile"],
+    "gameModes": ["Solo", "Duo", "Squad"],
+    "price": "Free / Paid options",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "16+"
   },
   {
     "id": "2",
@@ -15,9 +21,15 @@
     "coverPhoto": "https://i.ibb.co.com/KjWtMRLc/2.png",
     "category": "First-Person Shooter",
     "downloadLink": "https://www.callofduty.com/mobile",
-    "description": "Call of Duty: Mobile brings the classic Call of Duty experience to mobile devices.",
+    "description": "Call of Duty: Mobile brings the classic, fast-paced Call of Duty experience to mobile devices, optimized for touchscreens and on-the-go competitive play. Players engage in highly polished multiplayer modes, including Team Deathmatch, Search & Destroy, and Frontline, often set on iconic maps from the franchise's history. It also features a massive 100-player battle royale mode, allowing players to choose between multiple classes, utilize signature weapons, and dominate the leaderboard with console-quality graphics and smooth performance.",
     "ratings": "4.6",
-    "developer": "Activision"
+    "developer": "Activision",
+    "releaseDate": "2019-10-01",
+    "platforms": ["iOS", "Android"],
+    "gameModes": ["Multiplayer", "Battle Royale"],
+    "price": "Free with in-app purchases",
+    "languageSupport": ["English", "Spanish", "French"],
+    "ageRating": "18+"
   },
   {
     "id": "3",
@@ -25,9 +37,15 @@
     "coverPhoto": "https://i.ibb.co.com/5XSSKyG7/3.png",
     "category": "Action RPG",
     "downloadLink": "https://genshin.mihoyo.com/",
-    "description": "Genshin Impact is an open-world action RPG with elemental magic and exploration.",
+    "description": "Genshin Impact is an expansive open-world action RPG set in the vibrant fantasy world of Teyvat, a land guided by seven elemental Archons. Players take on the role of the Traveler, separated from their twin, and embark on a massive quest to find them. The core gameplay revolves around fluid, real-time combat that utilizes a unique elemental reaction system, extensive world exploration, puzzle-solving, and a 'Gacha' system for collecting a massive roster of unique, highly detailed characters, each with their own story and elemental powers.",
     "ratings": "4.7",
-    "developer": "miHoYo"
+    "developer": "miHoYo",
+    "releaseDate": "2020-09-28",
+    "platforms": ["PC", "PS4", "PS5", "Mobile", "Switch"],
+    "gameModes": ["Single-player", "Co-op"],
+    "price": "Free with in-app purchases",
+    "languageSupport": ["English", "Japanese", "Korean", "Chinese"],
+    "ageRating": "12+"
   },
   {
     "id": "4",
@@ -35,9 +53,23 @@
     "coverPhoto": "https://i.ibb.co.com/S41M5HKJ/4.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.epicgames.com/fortnite",
-    "description": "Fortnite is a battle royale game with building mechanics and seasonal updates.",
+    "description": "Fortnite is a globally popular battle royale game known for its distinctive blend of intense last-man-standing combat and dynamic building mechanics. Players harvest resources to instantly construct protective structures and tactical advantages during firefights. The game features a constantly evolving narrative, vibrant cartoon-like aesthetics, and seasonal updates that introduce new weapons, map changes, and crossover events with popular culture, offering a high-energy, constantly fresh experience.",
     "ratings": "4.4",
-    "developer": "Epic Games"
+    "developer": "Epic Games",
+    "releaseDate": "2017-07-25",
+    "platforms": [
+      "PC",
+      "PS4",
+      "PS5",
+      "Xbox One",
+      "Xbox Series X",
+      "Switch",
+      "Mobile"
+    ],
+    "gameModes": ["Battle Royale", "Creative", "Save the World"],
+    "price": "Free",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "12+"
   },
   {
     "id": "5",
@@ -45,9 +77,15 @@
     "coverPhoto": "https://i.ibb.co.com/M0PXQmJ/5.png",
     "category": "Sandbox",
     "downloadLink": "https://www.minecraft.net/",
-    "description": "Minecraft is a sandbox game where players can build and explore pixelated worlds.",
+    "description": "Minecraft is the quintessential sandbox game, offering limitless possibilities within its massive, procedurally-generated, blocky worlds. Players can gather resources, craft tools, and build intricate structures, ranging from simple shelters to complex, functioning machines. The game encourages creativity and exploration in its Creative mode, while Survival mode challenges players to manage health and hunger, fight hostile mobs like creepers and zombies, and delve into deep caves in search of rare minerals and adventure.",
     "ratings": "4.8",
-    "developer": "Mojang Studios"
+    "developer": "Mojang Studios",
+    "releaseDate": "2011-11-18",
+    "platforms": ["PC", "PS4", "Xbox One", "Switch", "Mobile"],
+    "gameModes": ["Creative", "Survival", "Adventure"],
+    "price": "Paid",
+    "languageSupport": ["English", "Spanish", "French", "German", "Chinese"],
+    "ageRating": "7+"
   },
   {
     "id": "6",
@@ -55,9 +93,15 @@
     "coverPhoto": "https://i.ibb.co.com/r24MX436/6.png",
     "category": "Action-Adventure",
     "downloadLink": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii/",
-    "description": "The Last of Us Part II is a narrative-driven action-adventure game set in a post-apocalyptic world.",
+    "description": "The Last of Us Part II is a deeply emotional and gritty narrative-driven action-adventure game set five years after the events of the first game, following Ellie as she seeks revenge in a post-apocalyptic United States. The game features intense, visceral combat combining stealth, platforming, and desperate close-quarters fighting against both infected fungal creatures and hostile human factions. It is critically acclaimed for its compelling, mature story, stunning graphical fidelity, and complex character development.",
     "ratings": "4.9",
-    "developer": "Naughty Dog"
+    "developer": "Naughty Dog",
+    "releaseDate": "2020-06-19",
+    "platforms": ["PS4"],
+    "gameModes": ["Single-player"],
+    "price": "$59.99",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "18+"
   },
   {
     "id": "7",
@@ -65,9 +109,15 @@
     "coverPhoto": "https://i.ibb.co.com/Df6DkkYf/7.png",
     "category": "Action-Adventure",
     "downloadLink": "https://www.rockstargames.com/reddeadredemption2/",
-    "description": "Red Dead Redemption 2 is an open-world action-adventure game set in the American Wild West.",
+    "description": "Red Dead Redemption 2 is an epic open-world action-adventure game set at the twilight of the American Wild West in 1899. Players assume the role of Arthur Morgan, a member of the Van der Linde gang, navigating a vast and richly detailed world filled with bandits, lawmen, and a complex social structure. The game is renowned for its immersive environmental detail, realistic physics, deep narrative choices that affect Arthur's honor, and a wide array of activities including hunting, gambling, and cinematic shootouts, providing hundreds of hours of exploration and storytelling.",
     "ratings": "4.9",
-    "developer": "Rockstar Games"
+    "developer": "Rockstar Games",
+    "releaseDate": "2018-10-26",
+    "platforms": ["PC", "PS4", "Xbox One", "Stadia"],
+    "gameModes": ["Single-player", "Online multiplayer"],
+    "price": "$59.99",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "18+"
   },
   {
     "id": "8",
@@ -75,9 +125,15 @@
     "coverPhoto": "https://i.ibb.co.com/1f8P8XBF/8.png",
     "category": "Racing",
     "downloadLink": "https://www.gran-turismo.com/",
-    "description": "Gran Turismo 7 is a racing simulation game featuring a wide variety of cars and tracks.",
+    "description": "Gran Turismo 7 is the pinnacle of the 'Real Driving Simulator' experience, offering unparalleled realism in physics, graphics, and car modeling. The game features a vast collection of legendary and contemporary cars and an array of real-world and fictional tracks. It includes the return of the fan-favorite GT Simulation Mode, challenging players to collect, tune, and race cars while learning about automotive culture, providing a deep, engaging experience for both casual players and hardcore racing enthusiasts.",
     "ratings": "4.6",
-    "developer": "Polyphony Digital"
+    "developer": "Polyphony Digital",
+    "releaseDate": "2022-03-04",
+    "platforms": ["PS4", "PS5"],
+    "gameModes": ["Single-player", "Multiplayer"],
+    "price": "$69.99",
+    "languageSupport": ["English", "Japanese", "French", "German"],
+    "ageRating": "3+"
   },
   {
     "id": "9",
@@ -85,9 +141,15 @@
     "coverPhoto": "https://i.ibb.co.com/B5t18wV9/9.png",
     "category": "Sports",
     "downloadLink": "https://www.ea.com/games/fifa/fifa-23",
-    "description": "FIFA 23 is the latest installment in the FIFA series, offering realistic soccer gameplay.",
+    "description": "FIFA 23 is the latest installment in the world's most popular soccer series, offering hyper-realistic soccer gameplay, advanced player animation, and updated rosters for thousands of real-world players and clubs. The game features various modes, including the popular Ultimate Team (FUT) where players build their dream squad, Career Mode for managing a club, and Volta Football for street soccer action. With cross-play compatibility and improved mechanics, it provides a comprehensive and competitive soccer experience.",
     "ratings": "4.5",
-    "developer": "EA Sports"
+    "developer": "EA Sports",
+    "releaseDate": "2022-09-30",
+    "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X", "Switch"],
+    "gameModes": ["Single-player", "Multiplayer"],
+    "price": "$59.99",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "3+"
   },
   {
     "id": "10",
@@ -95,9 +157,15 @@
     "coverPhoto": "https://i.ibb.co.com/6c80TPnX/10.png",
     "category": "RPG",
     "downloadLink": "https://www.cyberpunk.net/",
-    "description": "Cyberpunk 2077 is an open-world RPG set in a dystopian future with deep narrative choices.",
+    "description": "Cyberpunk 2077 is an open-world action-adventure RPG set in the sprawling, neon-drenched metropolis of Night City, a megalopolis obsessed with power, glamour, and body modification. You play as V, a mercenary outlaw seeking a unique implant that is the key to immortality. The game features deep character customization, branching storylines heavily influenced by player choice, fluid first-person combat, and extensive hacking and cybernetic enhancements, immersing players in a complex, dystopian future.",
     "ratings": "4.3",
-    "developer": "CD Projekt"
+    "developer": "CD Projekt",
+    "releaseDate": "2020-12-10",
+    "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X", "Stadia"],
+    "gameModes": ["Single-player"],
+    "price": "$59.99",
+    "languageSupport": ["English", "Polish", "French", "German"],
+    "ageRating": "18+"
   },
   {
     "id": "11",
@@ -105,9 +173,15 @@
     "coverPhoto": "https://i.ibb.co.com/Q381v9TP/11.png",
     "category": "Party",
     "downloadLink": "https://www.innersloth.com/gameAmongUs.php",
-    "description": "Among Us is a multiplayer party game where players work together to complete tasks while identifying impostors.",
+    "description": "Among Us is a highly popular multiplayer social deduction party game set in space, where 4-15 players work together to complete tasks on a spaceship, sky base, or planet. The catch is that a small number of players are randomly assigned as Impostors, whose goal is to covertly sabotage the mission and eliminate the crewmates. The core mechanic involves emergency meetings where players debate, accuse, and vote to eject suspected Impostors, relying entirely on communication, deception, and deduction.",
     "ratings": "4.4",
-    "developer": "Innersloth"
+    "developer": "Innersloth",
+    "releaseDate": "2018-06-15",
+    "platforms": ["PC", "Mobile", "Switch"],
+    "gameModes": ["Multiplayer"],
+    "price": "Free / Paid options",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "10+"
   },
   {
     "id": "12",
@@ -115,9 +189,15 @@
     "coverPhoto": "https://i.ibb.co.com/QjTc2BQY/12.png",
     "category": "MOBA",
     "downloadLink": "https://www.leagueoflegends.com/",
-    "description": "League of Legends is a multiplayer online battle arena game where teams compete to destroy the enemy nexus.",
+    "description": "League of Legends (LoL) is the world's most played multiplayer online battle arena (MOBA) game, where two teams of five players compete to destroy the enemy's Nexus, a central structure within their base. Players choose from a massive roster of unique 'Champions,' each with distinct abilities and playstyles, and battle across a three-lane map. The game requires high levels of teamwork, strategic resource management, and precise execution of abilities, making it a cornerstone of competitive esports.",
     "ratings": "4.7",
-    "developer": "Riot Games"
+    "developer": "Riot Games",
+    "releaseDate": "2009-10-27",
+    "platforms": ["PC", "Mac"],
+    "gameModes": ["Multiplayer"],
+    "price": "Free",
+    "languageSupport": ["English", "Spanish", "French", "German", "Korean"],
+    "ageRating": "12+"
   },
   {
     "id": "13",
@@ -125,9 +205,15 @@
     "coverPhoto": "https://i.ibb.co.com/JwCC031j/13.png",
     "category": "FPS",
     "downloadLink": "https://playvalorant.com/",
-    "description": "Valorant is a tactical first-person shooter that combines precise gunplay with unique agent abilities.",
+    "description": "Valorant is a 5v5 tactical first-person shooter that perfectly blends precise, high-stakes gunplay similar to traditional competitive shooters with unique, game-changing 'Agent' abilities. Set in a near-future world, teams compete on attack and defense, planting or defusing the 'Spike' in round-based matches. Success demands not only mechanical skill and fast reflexes but also sharp strategic communication and the coordinated use of Agent abilities to gain map control and outmaneuver opponents.",
     "ratings": "4.6",
-    "developer": "Riot Games"
+    "developer": "Riot Games",
+    "releaseDate": "2020-06-02",
+    "platforms": ["PC"],
+    "gameModes": ["Multiplayer"],
+    "price": "Free",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "16+"
   },
   {
     "id": "14",
@@ -135,9 +221,15 @@
     "coverPhoto": "https://i.ibb.co.com/N6BPK5dF/14.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.ea.com/games/apex-legends",
-    "description": "Apex Legends is a free-to-play battle royale game featuring squads, unique characters, and fast-paced action.",
+    "description": "Apex Legends is a free-to-play battle royale game distinguished by its unique character-based gameplay, featuring a roster of 'Legends,' each with their own distinct abilities, passive skills, and ultimate powers. Teams of three are dropped onto a dynamic map to scavenge and fight, with the circle constantly closing. The game introduced innovative mechanics like the 'ping system' for non-verbal communication and fluid, satisfying movement and gunplay, making it one of the fastest-paced and most team-focused battle royale experiences.",
     "ratings": "4.5",
-    "developer": "Respawn Entertainment"
+    "developer": "Respawn Entertainment",
+    "releaseDate": "2019-02-04",
+    "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X", "Switch"],
+    "gameModes": ["Battle Royale", "Arenas"],
+    "price": "Free",
+    "languageSupport": ["English", "Spanish", "French", "German"],
+    "ageRating": "16+"
   },
   {
     "id": "15",
@@ -145,8 +237,14 @@
     "coverPhoto": "https://i.ibb.co.com/rRbLMmqT/15.png",
     "category": "RPG",
     "downloadLink": "https://thewitcher.com/en/witcher3",
-    "description": "The Witcher 3: Wild Hunt is an open-world RPG featuring monster hunting, deep storylines, and a vast, immersive fantasy world.",
+    "description": "The Witcher 3: Wild Hunt is a monumental open-world action RPG that places players in the boots of Geralt of Rivia, a professional monster hunter, or 'Witcher.' Set in the sprawling, war-torn fantasy world of the Northern Realms, the game features a deep main storyline involving the search for Geralt's adopted daughter, Ciri, alongside hundreds of complex, emotionally resonant side quests. Combat is a combination of sword fighting, magical 'Signs,' alchemy, and careful preparation, celebrated for its vast, immersive fantasy world and the impact of player choice on the narrative.",
     "ratings": "4.9",
-    "developer": "CD Projekt"
+    "developer": "CD Projekt",
+    "releaseDate": "2015-05-19",
+    "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X", "Switch"],
+    "gameModes": ["Single-player"],
+    "price": "$39.99",
+    "languageSupport": ["English", "Polish", "French", "German", "Spanish"],
+    "ageRating": "18+"
   }
 ]
