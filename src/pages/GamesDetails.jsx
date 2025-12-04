@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { useLoaderData, useParams } from "react-router";
+import React, { useContext, useEffect } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 
 // Component for a clean, individual detail row
 const DetailItem = ({ label, value }) => (
@@ -14,6 +15,9 @@ const DetailItem = ({ label, value }) => (
 const GamesDetails = () => {
   const allGames = useLoaderData();
   const { id } = useParams();
+
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // Find the game details immediately
   const game = allGames.find((g) => g.id === id);
@@ -57,8 +61,14 @@ const GamesDetails = () => {
     gameModes,
     languageSupport,
     ageRating,
-    downloadLink,
   } = game;
+
+  const handleDownload = () => {
+    if (!user) {
+      return navigate("/auth/login");
+    }
+    window.open(game.downloadLink, "_blank");
+  };
 
   return (
     <div className="w-full min-h-screen bg-white pb-20">
@@ -91,14 +101,12 @@ const GamesDetails = () => {
             {description.substring(0, 200)}...
           </p>
 
-          <a
-            href={downloadLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3  text-base font-medium rounded-lg shadow-xl text-white bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:opacity-90 transition duration-300"
+          <button
+            onClick={handleDownload}
+            className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg shadow-xl text-white bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:opacity-90 transition duration-300"
           >
             Download Now
-          </a>
+          </button>
         </div>
       </div>
 

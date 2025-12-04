@@ -5,6 +5,11 @@ import NewsLetter from "../components/home/NewsLetter";
 import { FourSquare } from "react-loading-indicators";
 import { Link } from "react-router";
 
+import Featured from "../components/home/Featured";
+
+import Partners from "../components/home/Partners";
+import Frequently from "../components/home/Frequently";
+
 const Home = () => {
   return (
     <div className="pb-10">
@@ -17,8 +22,7 @@ const Home = () => {
         <Banner />
       </Suspense>
 
-      {/* 🔥 Centered content container */}
-      <div className=" mx-auto ">
+      <div className="mx-auto">
         <div className="grid md:grid-cols-3 gap-6 my-10">
           <div className="col-span-2">
             <Suspense
@@ -43,6 +47,14 @@ const Home = () => {
         >
           More Games
         </Link>
+
+        {/* --- New Static Sections --- */}
+        <div className="mt-16 space-y-16">
+          <Featured />
+
+          <Partners />
+          <Frequently></Frequently>
+        </div>
       </div>
     </div>
   );

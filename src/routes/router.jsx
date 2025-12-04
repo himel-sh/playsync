@@ -6,7 +6,7 @@ import Games from "../pages/Games";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import AuthLayout from "../layouts/AuthLayout";
-import PrivateRoute from "../provider/PrivateRoute";
+
 import Loading from "../pages/Loading";
 import Error from "../pages/Error";
 import Forget from "../pages/Forget";
@@ -32,11 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/games/:id",
-        element: (
-          <PrivateRoute>
-            <GamesDetails></GamesDetails>
-          </PrivateRoute>
-        ),
+        element: <GamesDetails></GamesDetails>,
         loader: () => fetch("/gamedata.json"),
         hydrateFallbackElement: <Loading></Loading>,
       },

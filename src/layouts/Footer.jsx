@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -6,9 +7,12 @@ const Footer = () => {
       {/* Container with max width */}
       <div className="max-w-7xl mx-auto footer sm:footer-horizontal">
         <aside>
-          <p className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+          <Link
+            to="/"
+            className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
+          >
             PlaySync
-          </p>
+          </Link>
           <p className="text-gray-400 mt-1">Your hub for all things gaming.</p>
         </aside>
 
