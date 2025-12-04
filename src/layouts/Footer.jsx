@@ -16,55 +16,102 @@ const Footer = () => {
           <p className="text-gray-400 mt-1">Your hub for all things gaming.</p>
         </aside>
 
+        {/* Games Section */}
         <nav>
           <h6 className="footer-title text-gray-400 uppercase tracking-wider">
             Games
           </h6>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Popular Games
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             New Releases
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Top Rated
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Categories
-          </a>
+          </Link>
         </nav>
 
+        {/* Company Section */}
         <nav>
           <h6 className="footer-title text-gray-400 uppercase tracking-wider">
             Company
           </h6>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+
+          <Link
+            to="/about-us"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             About PlaySync
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Contact
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Careers
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Press
-          </a>
+          </Link>
         </nav>
 
+        {/* Legal Section */}
         <nav>
           <h6 className="footer-title text-gray-400 uppercase tracking-wider">
             Legal
           </h6>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Terms of Use
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Privacy Policy
-          </a>
-          <a className="link link-hover hover:text-yellow-400 transition-colors">
+          </Link>
+
+          <Link
+            to="/"
+            className="link link-hover hover:text-yellow-400 transition-colors"
+          >
             Cookie Policy
-          </a>
+          </Link>
         </nav>
       </div>
     </footer>

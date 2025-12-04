@@ -12,6 +12,8 @@ import Error from "../pages/Error";
 import Forget from "../pages/Forget";
 import Profile from "../pages/Profile";
 import UpdateProfile from "../pages/UpdateProfile";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
         element: <GamesDetails></GamesDetails>,
         loader: () => fetch("/gamedata.json"),
         hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/forgetpass",
